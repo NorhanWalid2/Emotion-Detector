@@ -77,28 +77,40 @@ class _EmotionDetectorState extends State<EmotionDetector> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 234, 238, 240),
+      backgroundColor: const Color.fromARGB(255, 234, 238, 240),
       appBar: AppBar(
-        title: Text('Emotion Detector'),
+        title: const Text('Emotion Detector'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            width: double.infinity,
-            height: 360,
-            child: CameraPreview(cameraController!),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Container(
+              width: 400,
+              height: 460,
+              child: CameraPreview(cameraController!),
+            ),
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                output,
-                style: TextStyle(fontSize: 35, color: Colors.black),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  output,
+                  style: const TextStyle(fontSize: 35, color: Colors.black),
+                ),
               ),
-              Text(
-                conf.toString(),
-                style: TextStyle(fontSize: 25, color: Colors.black),
+              Center(
+                child: Text(
+                  conf.toString(),
+                  style: const TextStyle(fontSize: 35, color: Colors.black),
+                ),
+              ),
+              const Text(
+                '%',
+                style: TextStyle(fontSize: 35),
               ),
             ],
           ),
